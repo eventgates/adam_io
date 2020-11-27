@@ -25,5 +25,5 @@ Feel free to send an email to `kcelikel@eventgates.com <mailto:kcelikel@eventgat
     :titlesonly:
 
     EventGates <https://eventgates.com>
-    GitHub <https://github.com>
+    GitHub <https://github.com/eventgates/adam_io.git>
     PyPi <https://pypi.org>
