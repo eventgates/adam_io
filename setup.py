@@ -9,10 +9,10 @@ setuptools.setup(
     version=version.__version__,
     author="Kemal Çelikel",
     author_email="kcelikel@eventgates.com",
-    description="ADAM 6050-D REST API Implementation",
+    description="ADAM 6050-D REST API Python Wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://eventgates.com",
+    url="https://adam-io.readthedocs.io/",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
