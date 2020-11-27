@@ -1,2 +1,6 @@
 .idea/
 docs/build
+build/
+dist/
+adam_io.egg-info/
+__pycache__/
