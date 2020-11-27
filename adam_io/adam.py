@@ -6,9 +6,9 @@ Main ADAM module to make the requests for input and output operations
 
 from xml.etree import ElementTree
 
-from digital_io import DigitalInput, DigitalOutput
-from requestor import Requestor
-from utils import valid_ipv4
+from .digital_io import DigitalInput, DigitalOutput
+from .requestor import Requestor
+from .utils import valid_ipv4
 
 
 class Adam6050D:

@@ -1,9 +1,9 @@
 import base64
-
-from digital_io import DigitalOutput
-from utils import URI
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+
+from .digital_io import DigitalOutput
+from .utils import URI
 
 
 class Requestor:
