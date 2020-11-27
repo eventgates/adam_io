@@ -1,4 +1,6 @@
 # ADAM 6050-D REST API Implementation
+[![Documentation Status](https://readthedocs.org/projects/adam-io/badge/?version=latest)](https://adam-io.readthedocs.io/en/latest/?badge=latest)
+
 
 ![image](https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(B)/ADAM-6050_01_B20190725160245.jpg)
 
