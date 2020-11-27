@@ -4,7 +4,7 @@
 
 [ADAM 6000-Series Manual](http://advdownload.advantech.com/productfile/Downloadfile4/1-1M99LTH/ADAM-6000_User_Manaul_Ed_9.pdf)
 
-6050-D has 12 digital inputs and 6 digital outputs. It can be controlled with http requests. The aim of this repo is to wrap the ADAM API into a convenience module for ease of use in our deep learning platform.
+6050-D has 12 digital inputs and 6 digital outputs. It can be controlled with http requests. The aim of this repo is to wrap the ADAM API into a convenience module for Event Gates' deep learning platform VIS.
 
 # Usage Examples
 
