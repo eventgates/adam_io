@@ -1,6 +1,6 @@
 """
 ADAM 6050-D
-====================================
+===========
 Main ADAM module to make the requests for input and output operations
 """
 
