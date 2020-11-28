@@ -8,6 +8,11 @@
 
 6050-D has 12 digital inputs and 6 digital outputs. It can be controlled with http requests. The aim of this repo is to wrap the ADAM API into a convenience module for Event Gates' deep learning platform VIS.
 
+# Installation
+```
+pip install adam-io
+```
+
 # Usage Examples
 
 You can update output state in three steps;

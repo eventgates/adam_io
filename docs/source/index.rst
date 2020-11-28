@@ -11,6 +11,14 @@ This documentation contains information on how to use this module along with som
 
 Feel free to send an email to `kcelikel@eventgates.com <mailto:kcelikel@eventgates.com>`_ for any questions you might have.
 
+Install
+------------------
+Install with pip, requires python3.6>=
+
+.. code-block:: 
+
+    pip install adam-io
+
 .. toctree::
     :caption: Contents:
     :titlesonly:
