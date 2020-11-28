@@ -5,7 +5,7 @@ ADAM 6050-D REST API Implementation
 
 `ADAM 6000-Series Manual <http://advdownload.advantech.com/productfile/Downloadfile4/1-1M99LTH/ADAM-6000_User_Manaul_Ed_9.pdf>`_
 
-6050-D has 12 digital inputs and 6 digital outputs. Can be controlled with http requests. This is the documentation for ADAM 6050-D REST API implementation. Aim is to wrap the ADAM API into a convenience module for ease of use in our deep learning platform.
+6050-D has 12 digital inputs and 6 digital outputs. Can be controlled with http requests. This is the documentation for ADAM 6050-D REST API implementation. Aim is to wrap the ADAM API into a convenience module for Event Gates' deep learning platform VIS.
 
 This documentation contains information on how to use this module along with some examples.
 
