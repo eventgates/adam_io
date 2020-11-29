@@ -1,6 +1,6 @@
 ADAM
 ----
 
-.. automodule:: adam_io.adam
+.. automodule:: adam
     :members:
 
