@@ -31,8 +31,8 @@ class Adam6050D:
         self.requestor = Requestor(ip, username, password)
 
         # make an initial request
-        input_response = self.input()
-        print("Initialized " + input_response.name)
+        #input_response = self.input()
+        #print("Initialized " + input_response.name)
 
     def output(self, digital_output: DigitalOutput = None):
         """

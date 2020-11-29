@@ -12,9 +12,9 @@
 #
 import os
 import sys
+import re
 
-sys.path.insert(0, os.path.abspath('../../adam_io/'))
-
+sys.path.insert(0, os.path.abspath('../../'))
 
 # -- Project information -----------------------------------------------------
 
@@ -22,8 +22,12 @@ project = 'ADAM IO'
 copyright = '2020, Event Gates'
 author = 'Kemal Çelikel'
 
+
+with open('../../version.py','r') as f:
+    version = re.search("'(\d+.?)*'",f.read()).group() 
+    
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = version
 
 source_suffix = ['.rst']
 

@@ -3,4 +3,5 @@ docs/build
 build/
 dist/
 adam_io.egg-info/
+adam_io/__pycache__/
 __pycache__/
