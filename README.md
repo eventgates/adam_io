@@ -1,6 +1,7 @@
 # ADAM 6050-D REST API Implementation
 [![Documentation Status](https://readthedocs.org/projects/adam-io/badge/?version=latest)](https://adam-io.readthedocs.io/en/latest/?badge=latest)
 ![Tests](https://github.com/eventgates/adam_io/workflows/Tests/badge.svg)
+[![PyPi](https://pypi.org/project/adam-io/)](https://pypi.org/project/adam-io/)
 
 
 
