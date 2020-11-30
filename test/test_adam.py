@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import Mock
 
-from adam_io import Adam6050D
-from digital_io import DigitalOutput
+from adam_io.adam import Adam6050D
+from adam_io.digital_io import DigitalOutput
 
 
 class AdamTest(unittest.TestCase):
