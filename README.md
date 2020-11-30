@@ -27,7 +27,7 @@ Read the input state;
 
 IP, username, password of ADAM should be already set from APEX
 
-```
+```python
 from adam import ADAM6050D as ADAM
 
 ip='192.168.1.1'
@@ -42,7 +42,7 @@ adam = ADAM(ip, username, password)
 To change the state of the outputs, you should create/reuse a DigitalOutput object
 After creating the object, the initial state is empty, so making a request straight away changes nothing.
 
-```
+```python
 from digital_io import DigitalOutput
 
 do = DigitalOutput()
@@ -57,7 +57,7 @@ do[5]=1
 
 You don’t have to set every bit, you can just change the ones you need.
 
-```
+```python
 from digital_io import DigitalOutput
 
 do = DigitalOutput()
@@ -68,7 +68,7 @@ do[5]=0
 
 DigitalOutput accepts an array to set the outputs all at once
 
-```
+```python
 from digital_io import DigitalOutput
 
 # set every available output to 1
@@ -80,7 +80,7 @@ do = DigitalOutput(array=initial_array)
 
 After creating adam and setting the digital outputs, make the request by calling the output method of ADAM and pass the digitalOuput object as argument.
 
-```
+```python
 from adam import ADAM6050D as ADAM
 from digital_io import DigitalOutput
 
@@ -106,7 +106,7 @@ except Exception as err:
 
 You can get the current state by calling the digitalOutput object without an argument
 
-```
+```python
 current_output = adam.output()
 
 # state of DO0
@@ -117,7 +117,7 @@ current_output[0]
 
 To read the input state, call input() on ADAM. You can pass in the id of a specific input if you want. Otherwise every input value is retrieved
 
-```
+```python
 input_id = 0
 di_0 = adam.input(input_id)
 
