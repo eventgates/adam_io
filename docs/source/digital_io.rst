@@ -1,5 +1,5 @@
 IO
 --
 
-.. automodule:: digital_io
+.. automodule:: adam_io.digital_io
     :members:
