@@ -34,7 +34,7 @@ class Requestor:
             url = self.base_url + URI.DIGITAL_INPUT + input_channel_id + URI.VALUE
         else:
             url = self.base_url + URI.DIGITAL_INPUT + URI.ALL + URI.VALUE
-        request = Request(url)
+        request = Request(url, headers=self.headers)
         response = urlopen(request)
         return response.read().decode('utf8')
 
@@ -50,9 +50,9 @@ class Requestor:
 
         if data:
             params = urlencode(data).encode('utf-8')
-            request = Request(url, data=params)
+            request = Request(url, data=params, headers=self.headers)
         else:
-            request = Request(url)
+            request = Request(url, headers=self.headers)
 
         response = urlopen(request)
         return response.read().decode('utf8')
