@@ -56,14 +56,14 @@ class DigitalOutput:
         same as __call__
         :return: the data ready to be sent over to ADAM
         """
-        return {k: v for k, v in self._do.items() if v}
+        return {k: v for k, v in self._do.items() if v is not None}
 
     def __call__(self):
         """
         same as as_dict
         :return: the data ready to be sent over to ADAM
         """
-        return {k: v for k, v in self._do.items() if v}
+        return {k: v for k, v in self._do.items() if v is not None}
 
     def __getitem__(self, do_id):
         return self._do[do_id]
