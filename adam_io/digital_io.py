@@ -66,7 +66,8 @@ class DigitalOutput:
         return {k: v for k, v in self._do.items() if v is not None}
 
     def __getitem__(self, do_id):
-        return self._do[do_id]
+        #return self._do[do_id]
+        return self._do[f"DO{index}"]
 
     def __iter__(self):
         yield from self._do.items()
