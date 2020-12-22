@@ -46,9 +46,10 @@ class Adam6050D:
         # set the value(s) of the current state to that of input's
         if digital_output:
             current_state = self.requestor.output()
-            current_do = DigitalOutput(current_state)
+            current_do = DigitalOutput(xml_string=current_state)
             for key, val in digital_output:
-                current_do[key] = digital_output[key]
+                if val is not None:
+                    current_do[int(key.replace("DO", ""))] = digital_output[int(key.replace("DO", ""))]
             response = self.requestor.output(current_do.as_dict())
         else:
             data = digital_output.as_dict()
