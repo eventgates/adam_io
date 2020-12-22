@@ -9,6 +9,7 @@ from xml.etree import ElementTree
 from .digital_io import DigitalInput, DigitalOutput
 from .requestor import Requestor
 from .utils import valid_ipv4
+from typing import Optional
 
 
 class Adam6050D:
@@ -31,25 +32,36 @@ class Adam6050D:
         self.requestor = Requestor(ip, username, password)
 
         # make an initial request
-        #input_response = self.input()
-        #print("Initialized " + input_response.name)
+        # input_response = self.input()
+        # print("Initialized " + input_response.name)
 
-    def output(self, digital_output: DigitalOutput = None):
+    def output(self, digital_output: Optional[DigitalOutput] = None):
         """
         This prepares the data and sends it over to ADAM.
 
         :param digital_output: DigitalOutput, if the digital_output is None, read the values, not set them.
         :return: True for success, raises an exception if unsuccessful
         """
-        data = digital_output.as_dict()
-        response = self.requestor.output(data)
+
+        # set the value(s) of the current state to that of input's
+        if digital_output:
+            current_state = self.requestor.output()
+            current_do = DigitalOutput(current_state)
+            for key, val in digital_output:
+                current_do[key] = digital_output[key]
+            response = self.requestor.output(current_do.as_dict())
+        else:
+            data = digital_output.as_dict()
+            response = self.requestor.output(data)
+
         root = ElementTree.fromstring(response)
         status = root.attrib['status']
         if status != "OK":
             raise Exception("Couldn't update output: ", status)
         return True
 
-    def input(self, digital_input_id: int = None):
+    def input(self, digital_input_id: Optional[int] = None):
+
         """
         Read the values of the digital inputs
 

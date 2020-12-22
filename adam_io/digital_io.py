@@ -19,17 +19,34 @@ class DigitalOutput:
 
     """
 
-    def __init__(self, quantity: int = 6, array: List[int] = None):
+    def __init__(self, quantity: int = 6, array: Optional[List[int]] = None, xml_string: Optional[str] = None):
         """
         :param quantity: number of digital outputs
         :param array: pass in an array with the same size as quantity to initialize the internal
             digital output dictionary in an ordered manner. If the sizes mismatch, throws an exception
         """
-        self._do = {f"DO{index}": None for index in range(0, quantity + 1)}
+        if xml_string:
+            self._do = self.parse(xml_string)
+        else:
+            self._do = {f"DO{index}": None for index in range(0, quantity + 1)}
         if array:
             if len(array) != quantity:
                 raise Exception("quantity and initial array sizes are different for digital output")
             self.array(array)
+
+    def parse(self, xml_string: str):
+        """
+        :param xml_string: response string from ADAM
+        """
+        root = ElementTree.fromstring(xml_string)
+        status = root.attrib['status']
+        if status != 'OK':
+            raise Exception("something wrong with the response, status is:", status)
+
+        # convert xml to dictionary
+        values = [int(di_element.text) for di in root for di_element in di if di_element.tag == "VALUE"]
+        keys = ["DO" + di_element.text for di in root for di_element in di if di_element.tag == "ID"]
+        return dict(zip(keys, values))
 
     def __setitem__(self, do_id: int, value: int):
         if type(value) is not int:
@@ -66,8 +83,7 @@ class DigitalOutput:
         return {k: v for k, v in self._do.items() if v is not None}
 
     def __getitem__(self, do_id):
-        #return self._do[do_id]
-        return self._do[f"DO{index}"]
+        return self._do[f"DO{do_id}"]
 
     def __iter__(self):
         yield from self._do.items()
