@@ -48,18 +48,18 @@ class Adam6050D:
             current_state = self.requestor.output()
             current_do = DigitalOutput(xml_string=current_state)
             for key, val in digital_output:
+                key = int(key.replace("DO", ""))
                 if val is not None:
-                    current_do[int(key.replace("DO", ""))] = digital_output[int(key.replace("DO", ""))]
+                    current_do[key] = digital_output[key]
             response = self.requestor.output(current_do.as_dict())
+            root = ElementTree.fromstring(response)
+            status = root.attrib['status']
+            if status != "OK":
+                raise Exception("Couldn't update output: ", status)
+            return True
         else:
-            data = digital_output.as_dict()
-            response = self.requestor.output(data)
-
-        root = ElementTree.fromstring(response)
-        status = root.attrib['status']
-        if status != "OK":
-            raise Exception("Couldn't update output: ", status)
-        return True
+            response = self.requestor.output(digital_output)
+            return DigitalOutput(xml_string=response)
 
     def input(self, digital_input_id: Optional[int] = None):
 
