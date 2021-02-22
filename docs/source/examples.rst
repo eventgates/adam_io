@@ -12,7 +12,7 @@ IP, username, password of ADAM should be already set from APEX
 
 .. code-block:: python
 
-    from adam import ADAM6050D as ADAM
+    from adam_io import ADAM6050D as ADAM
 
     ip='192.168.1.1'
     username = 'user'
@@ -65,7 +65,7 @@ After creating adam and setting the digital outputs, make the request by calling
 
 .. code-block:: python
 
-    from adam import ADAM6050D as ADAM
+    from adam_io import ADAM6050D as ADAM
     from digital_io import DigitalOutput
 
     ip='192.168.1.1'
