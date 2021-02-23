@@ -2,6 +2,7 @@ Usage Examples
 ==============
 
 You can update output state in three steps;
+
 * Create the ADAM object
 * Create/reuse DigitalOutput
 * Make the request
