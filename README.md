@@ -1,9 +1,7 @@
 # ADAM 6050-D REST API Implementation
-[![Documentation Status](https://readthedocs.org/projects/adam-io/badge/?version=latest)](https://adam-io.readthedocs.io/en/latest/?badge=latest)
+![Documentation Status](https://readthedocs.org/projects/adam-io/badge/?version=latest)](https://adam-io.readthedocs.io/en/latest/?badge=latest)
 ![Tests](https://github.com/eventgates/adam_io/workflows/Tests/badge.svg)
 [![Publish](https://github.com/eventgates/adam_io/workflows/Publish/badge.svg)](https://pypi.org/project/adam-io/)
-
-
 
 ![image](https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(B)/ADAM-6050_01_B20190725160245.jpg)
 
@@ -31,13 +29,13 @@ Read the input state;
 IP, username, password of ADAM should be already set from APEX
 
 ```python
-from adam import ADAM6050D as ADAM
+from adam_io import Adam6050D
 
 ip='192.168.1.1'
 username = 'user'
 password = 'pass'
 
-adam = ADAM(ip, username, password)
+adam = Adam6050D(ip, username, password)
 ```
 
 ## Construct the digital output object
@@ -46,7 +44,7 @@ To change the state of the outputs, you should create/reuse a DigitalOutput obje
 After creating the object, the initial state is empty, so making a request straight away changes nothing.
 
 ```python
-from digital_io import DigitalOutput
+from adam_io import DigitalOutput
 
 do = DigitalOutput()
 # set every available output to 1
@@ -61,7 +59,7 @@ do[5]=1
 You don’t have to set every bit, you can just change the ones you need.
 
 ```python
-from digital_io import DigitalOutput
+from adam_io import DigitalOutput
 
 do = DigitalOutput()
 # set DO0 to 1 and DO5 to 0
@@ -72,7 +70,7 @@ do[5]=0
 DigitalOutput accepts an array to set the outputs all at once
 
 ```python
-from digital_io import DigitalOutput
+from adam_io import DigitalOutput
 
 # set every available output to 1
 initial_array = [1,1,1,1,1,1,1]
@@ -84,14 +82,13 @@ do = DigitalOutput(array=initial_array)
 After creating adam and setting the digital outputs, make the request by calling the output method of ADAM and pass the digitalOuput object as argument.
 
 ```python
-from adam import ADAM6050D as ADAM
-from digital_io import DigitalOutput
+from adam_io import ADAM6050D, DigitalOutput
 
 ip='192.168.1.1'
 username = 'user'
 password = 'pass'
 
-adam = ADAM(ip, username, password)
+adam = Adam6050D(ip, username, password)
 
 do = DigitalOutput()
 # set DO0 to 1 and DO5 to 0
@@ -137,7 +134,6 @@ print(di[1]) # DI1
 #
 print(di[10]) # DI10
 print(di[11]) # DI11
-
 ```
 
 # LICENSE
